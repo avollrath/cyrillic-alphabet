@@ -2,7 +2,7 @@
 
 Eine einfache React-App zum Lernen des russischen Alphabets.
 
-![Vorschau der App](./docs/app-preview.png)
+![Vorschau der App](./docs/app-preview.jpg)
 
 ## Was die App kann
 

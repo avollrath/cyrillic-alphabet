@@ -13,7 +13,8 @@ type DashboardProps = {
 };
 
 function formatDays(value: number) {
-  return `${value} ${value === 1 ? "Tag" : "Tage"}`;
+  const safeValue = Number.isFinite(value) ? value : 0;
+  return `${safeValue} ${safeValue === 1 ? "Tag" : "Tage"}`;
 }
 
 export function Dashboard({

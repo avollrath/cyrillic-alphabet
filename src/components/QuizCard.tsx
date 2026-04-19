@@ -50,11 +50,18 @@ export function QuizCard({
             <div className="mb-6 font-headline text-9xl font-extrabold tracking-tighter text-on-surface">
               {question.uppercase} {question.lowercase}
             </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-surface-container-lowest px-6 py-2 text-on-surface-variant">
-              <span className="material-symbols-outlined text-lg" aria-hidden="true">
-                translate
-              </span>
-              <span>Umschrift: {question.transliteration}</span>
+            <div className="space-y-2">
+              <div className="inline-flex items-center gap-2 rounded-full bg-surface-container-lowest px-6 py-2 text-on-surface-variant">
+                <span className="material-symbols-outlined text-lg" aria-hidden="true">
+                  translate
+                </span>
+                <span>Umschrift: {question.transliteration}</span>
+              </div>
+              {question.exampleWord && question.exampleTranslation ? (
+                <p className="text-sm text-on-surface-variant">
+                  Beispiel: <span className="font-medium text-on-surface">{question.exampleWord}</span> – {question.exampleTranslation}
+                </p>
+              ) : null}
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -97,6 +104,11 @@ export function QuizCard({
               <p className="text-on-surface-variant">
                 Wie spricht man diesen Buchstaben auf Deutsch aus?
               </p>
+              {question.exampleWord && question.exampleTranslation ? (
+                <p className="mt-3 text-sm text-on-surface-variant">
+                  Beispiel: <span className="font-medium text-on-surface">{question.exampleWord}</span> – {question.exampleTranslation}
+                </p>
+              ) : null}
             </div>
             <div className="grid w-full max-w-md grid-cols-2 gap-4">
               {question.options.map((option, index) => (

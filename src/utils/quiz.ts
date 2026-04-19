@@ -63,6 +63,8 @@ export function buildQuestion(letter: Letter, letters: Letter[]): QuizQuestion {
     lowercase: letter.lowercase,
     transliteration: letter.transliteration,
     answer: letter.answer,
+    exampleWord: letter.exampleWord,
+    exampleTranslation: letter.exampleTranslation,
     options,
   };
 }

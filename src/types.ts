@@ -14,6 +14,8 @@ export type Letter = {
   transliteration: string;
   category: "vowel" | "consonant" | "special";
   example?: string;
+  exampleWord?: string;
+  exampleTranslation?: string;
   stats: LetterStats;
   mastered: boolean;
 };
@@ -62,6 +64,8 @@ export type QuizQuestion = {
   lowercase: string;
   transliteration: string;
   answer: string;
+  exampleWord?: string;
+  exampleTranslation?: string;
   options: QuestionOption[];
 };
 

@@ -35,7 +35,7 @@ export function QuizCard({
             </h2>
           </div>
           <span className="text-sm font-semibold text-on-surface-variant">
-            {Math.round(progressPercent / 10)} / 10 abgeschlossen
+            {Math.round(progressPercent / 10)} von 10 beantwortet
           </span>
         </div>
         <ProgressBar value={progressPercent} color={feedbackLayout ? "secondary" : "primary"} />
@@ -45,14 +45,16 @@ export function QuizCard({
         <div className="grid items-stretch gap-8 md:grid-cols-2">
           <div className="rounded-[2rem] bg-surface-container-low p-12">
             <div className="mb-8 text-xs uppercase tracking-widest text-on-surface-variant">
-              Wählen Sie die richtige Aussprache
+              Welche Aussprache passt?
             </div>
             <div className="mb-6 font-headline text-9xl font-extrabold tracking-tighter text-on-surface">
               {question.uppercase} {question.lowercase}
             </div>
-            <div className="inline-flex items-center gap-2 rounded-full bg-surface-container-lowest px-6 py-2 text-primary">
-              <span className="material-symbols-outlined text-lg">volume_up</span>
-              <span>Anhören</span>
+            <div className="inline-flex items-center gap-2 rounded-full bg-surface-container-lowest px-6 py-2 text-on-surface-variant">
+              <span className="material-symbols-outlined text-lg" aria-hidden="true">
+                translate
+              </span>
+              <span>Umschrift: {question.transliteration}</span>
             </div>
           </div>
           <div className="flex flex-col gap-4">
@@ -90,10 +92,10 @@ export function QuizCard({
             <LetterCard question={question} />
             <div className="text-center">
               <h3 className="mb-2 font-headline text-2xl font-bold text-on-surface">
-                Wähle die richtige deutsche Aussprache
+                Wähle die richtige Aussprache
               </h3>
               <p className="text-on-surface-variant">
-                Identify the correct phonetic sound for this character.
+                Wie spricht man diesen Buchstaben auf Deutsch aus?
               </p>
             </div>
             <div className="grid w-full max-w-md grid-cols-2 gap-4">

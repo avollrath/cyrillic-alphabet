@@ -9,10 +9,55 @@ function todayKey() {
   return new Date().toISOString().slice(0, 10);
 }
 
+function differenceInDays(left: string, right: string) {
+  const leftDate = new Date(`${left}T00:00:00`);
+  const rightDate = new Date(`${right}T00:00:00`);
+  return Math.round((leftDate.getTime() - rightDate.getTime()) / 86400000);
+}
+
+function getDayStreaks(daysActive: string[]) {
+  const sortedDays = [...new Set(daysActive)].sort();
+
+  if (sortedDays.length === 0) {
+    return { currentDayStreak: 0, bestDayStreak: 0 };
+  }
+
+  let bestDayStreak = 1;
+  let runningBest = 1;
+
+  for (let index = 1; index < sortedDays.length; index += 1) {
+    if (differenceInDays(sortedDays[index], sortedDays[index - 1]) === 1) {
+      runningBest += 1;
+      bestDayStreak = Math.max(bestDayStreak, runningBest);
+    } else {
+      runningBest = 1;
+    }
+  }
+
+  let currentDayStreak = 1;
+  for (let index = sortedDays.length - 1; index > 0; index -= 1) {
+    if (differenceInDays(sortedDays[index], sortedDays[index - 1]) === 1) {
+      currentDayStreak += 1;
+    } else {
+      break;
+    }
+  }
+
+  const today = todayKey();
+  const mostRecentDay = sortedDays[sortedDays.length - 1];
+
+  if (differenceInDays(today, mostRecentDay) > 1) {
+    currentDayStreak = 0;
+  }
+
+  return { currentDayStreak, bestDayStreak };
+}
+
 export function useProgress() {
   const [progress, setProgress] = useLocalStorageState<ProgressState>(STORAGE_KEY, createDefaultProgress());
 
   const letters = useMemo(() => mergeLetterStats(russianAlphabet, progress), [progress]);
+  const { currentDayStreak, bestDayStreak } = useMemo(() => getDayStreaks(progress.daysActive), [progress.daysActive]);
 
   const markAnswer = (letter: Letter, correct: boolean, xpAwarded: number) => {
     setProgress((current) => {
@@ -82,12 +127,19 @@ export function useProgress() {
     });
   };
 
+  const resetProgress = () => {
+    setProgress(createDefaultProgress());
+  };
+
   return {
     progress,
     letters,
+    currentDayStreak,
+    bestDayStreak,
     markAnswer,
     finishSession,
     unlockAchievement,
+    resetProgress,
     setProgress,
   };
 }

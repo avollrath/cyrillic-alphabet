@@ -25,7 +25,7 @@ export function AchievementCard({ achievement, featured = false }: AchievementCa
           <p className="mb-6 text-lg text-on-surface-variant">{achievement.description}</p>
           <span className="text-sm font-semibold text-secondary">
             {achievement.unlockedAt
-              ? `Vollendet am ${new Date(achievement.unlockedAt).toLocaleDateString("de-DE")}`
+              ? `Freigeschaltet am ${new Date(achievement.unlockedAt).toLocaleDateString("de-DE")}`
               : "Noch nicht freigeschaltet"}
           </span>
         </div>

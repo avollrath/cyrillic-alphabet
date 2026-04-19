@@ -31,7 +31,7 @@ export function AnswerButton({
         disabled
         className={clsx(
           "flex w-full items-center justify-between rounded-xl p-6 text-left transition-all duration-300",
-          isCorrect && "ring-2 ring-secondary/40 bg-surface-container-lowest",
+          isCorrect && "bg-surface-container-lowest ring-2 ring-secondary/40",
           isUserChoice && !isCorrect && "bg-error-container/30 ring-1 ring-error/20",
           !isCorrect && !isUserChoice && "pointer-events-none bg-surface-container-lowest opacity-40 grayscale",
         )}
@@ -48,7 +48,7 @@ export function AnswerButton({
             {String.fromCharCode(65 + index)}
           </div>
           <div>
-            <div className="text-2xl font-bold text-on-surface font-headline">{option.label}</div>
+            <div className="font-headline text-2xl font-bold text-on-surface">{option.label}</div>
             <div
               className={clsx(
                 "text-sm uppercase tracking-wider",
@@ -56,7 +56,7 @@ export function AnswerButton({
                 isUserChoice && !isCorrect && "font-medium text-error/80",
               )}
             >
-              {isCorrect ? "Richtige Antwort" : isUserChoice ? "Ihre Wahl" : ""}
+              {isCorrect ? "Richtige Antwort" : isUserChoice ? "Deine Auswahl" : ""}
             </div>
           </div>
         </div>
@@ -77,16 +77,17 @@ export function AnswerButton({
       onClick={onClick}
       disabled={disabled}
       className={clsx(
-        "group relative flex min-h-40 flex-col items-center justify-center rounded-2xl bg-surface-container-lowest p-8 transition-all duration-300 active:scale-95",
-        selected ? "ring-2 ring-primary bg-primary/5" : "hover:bg-primary-fixed/30",
+        "group relative flex min-h-40 flex-col items-center justify-center rounded-2xl bg-surface-container-lowest p-8 transition-all duration-300 active:scale-95 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 disabled:cursor-not-allowed disabled:opacity-60",
+        selected ? "bg-primary/5 ring-2 ring-primary" : "hover:bg-primary-fixed/30",
       )}
+      aria-pressed={selected}
     >
-      <span className={clsx("text-2xl font-bold font-headline", selected ? "text-primary" : "text-on-surface")}>
+      <span className={clsx("font-headline text-2xl font-bold", selected ? "text-primary" : "text-on-surface")}>
         {option.label}
       </span>
-      <span className={clsx("mt-2 text-[10px] font-bold uppercase tracking-widest", selected ? "text-primary/70" : "text-outline")}>
-        {selected ? "Selected" : `Option ${index + 1}`}
-      </span>
+      {selected ? (
+        <span className="mt-2 text-[10px] font-bold uppercase tracking-widest text-primary/70">Ausgewählt</span>
+      ) : null}
     </button>
   );
 }

@@ -1,47 +1,33 @@
 import { NavLink } from "react-router-dom";
 
+const navItemClass = ({ isActive }: { isActive: boolean }) =>
+  [
+    "rounded-full px-4 py-2 text-sm font-medium tracking-tight transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40",
+    isActive ? "bg-primary-fixed text-primary" : "text-slate-500 hover:text-slate-900",
+  ].join(" ");
+
 export function TopNav() {
   return (
     <header className="fixed top-0 z-50 w-full bg-[#f8f9fa]/80 premium-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-8 py-4">
-        <div className="font-headline text-xl font-extrabold tracking-tighter text-slate-900">Kognitive Galerie</div>
-        <nav className="hidden items-center gap-8 md:flex font-headline font-medium tracking-tight">
-          <NavLink
-            to="/learn"
-            className={({ isActive }) =>
-              isActive ? "border-b-2 border-[#2E5BFF] pb-1 text-[#2E5BFF]" : "text-slate-500 transition-colors hover:text-slate-900"
-            }
-          >
+      <div className="mx-auto flex max-w-7xl flex-col gap-4 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:px-8">
+        <NavLink
+          to="/"
+          className="font-headline text-xl font-extrabold tracking-tighter text-slate-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+        >
+          Russisch lernen
+        </NavLink>
+
+        <nav aria-label="Hauptnavigation" className="flex flex-wrap items-center gap-2 font-headline">
+          <NavLink to="/learn" className={navItemClass}>
             Lernen
           </NavLink>
-          <NavLink
-            to="/dashboard"
-            className={({ isActive }) =>
-              isActive ? "border-b-2 border-[#2E5BFF] pb-1 text-[#2E5BFF]" : "text-slate-500 transition-colors hover:text-slate-900"
-            }
-          >
-            Dashboard
+          <NavLink to="/dashboard" className={navItemClass}>
+            Fortschritt
           </NavLink>
-          <NavLink
-            to="/achievements"
-            className={({ isActive }) =>
-              isActive ? "border-b-2 border-[#2E5BFF] pb-1 text-[#2E5BFF]" : "text-slate-500 transition-colors hover:text-slate-900"
-            }
-          >
+          <NavLink to="/achievements" className={navItemClass}>
             Erfolge
           </NavLink>
         </nav>
-        <div className="flex items-center gap-4">
-          <button type="button" className="material-symbols-outlined text-on-surface-variant transition-opacity hover:opacity-80">
-            notifications
-          </button>
-          <button type="button" className="material-symbols-outlined text-on-surface-variant transition-opacity hover:opacity-80">
-            settings
-          </button>
-          <div className="flex h-9 w-9 items-center justify-center overflow-hidden rounded-full bg-surface-container-highest text-sm font-bold text-primary">
-            Я
-          </div>
-        </div>
       </div>
     </header>
   );

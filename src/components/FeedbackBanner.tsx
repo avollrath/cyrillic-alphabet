@@ -28,12 +28,12 @@ export function FeedbackBanner({ question, result, onContinue }: FeedbackBannerP
           </div>
           <div>
             <h3 className={`font-headline text-2xl font-bold ${correct ? "text-secondary" : "text-on-background"}`}>
-              {correct ? "Richtig! Gut gemacht!" : "Nicht ganz."}
+              {correct ? "Richtig." : "Das war noch nicht richtig."}
             </h3>
             <p className="text-lg text-on-surface-variant">
               {correct
-                ? `Das russische '${question.uppercase}' entspricht dem deutschen '${question.answer}'.`
-                : `Die richtige Aussprache ist "${question.answer}". Kopf hoch, Russisch braucht Übung!`}
+                ? `Der russische Buchstabe "${question.uppercase}" wird hier mit "${question.answer}" wiedergegeben.`
+                : `Die richtige Antwort ist "${question.answer}". Versuch es gleich mit dem nächsten Buchstaben noch einmal.`}
             </p>
           </div>
         </div>

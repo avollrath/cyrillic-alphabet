@@ -12,19 +12,16 @@ export function Layout({ children, withSideNav = false, footer = true }: LayoutP
   return (
     <div className="min-h-screen bg-surface font-body text-on-surface">
       <TopNav />
-      <div className={`pt-20 ${withSideNav ? "lg:flex" : ""}`}>
+      <div className={`pt-28 sm:pt-24 ${withSideNav ? "lg:flex" : ""}`}>
         {withSideNav ? <SideNav /> : null}
         <main className={`flex-1 px-6 py-8 ${withSideNav ? "lg:px-12" : ""}`}>{children}</main>
       </div>
       {footer ? (
-        <footer className="w-full border-t border-slate-200/20 bg-[#f8f9fa] py-12">
-          <div className="mx-auto flex max-w-7xl flex-col items-center justify-between gap-6 px-12 md:flex-row">
-            <p className="text-xs uppercase tracking-widest text-slate-400">© 2024 Kognitive Galerie. Die Kunst der Sprache.</p>
-            <div className="flex gap-8 text-xs uppercase tracking-widest text-slate-500">
-              <a href="#">Datenschutz</a>
-              <a href="#">Impressum</a>
-              <a href="#">Support</a>
-            </div>
+        <footer className="w-full border-t border-slate-200/20 bg-[#f8f9fa] py-10">
+          <div className="mx-auto max-w-7xl px-8 text-center md:text-left">
+            <p className="text-xs uppercase tracking-widest text-slate-400">
+              Lernstand wird lokal in deinem Browser gespeichert.
+            </p>
           </div>
         </footer>
       ) : null}

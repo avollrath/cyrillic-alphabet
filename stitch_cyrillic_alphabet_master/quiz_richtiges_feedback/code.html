@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+
+<html class="light" lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary-fixed-variant": "#005048",
+                        "surface": "#f8f9fa",
+                        "on-primary": "#ffffff",
+                        "surface-container-highest": "#e1e3e4",
+                        "on-error": "#ffffff",
+                        "on-tertiary-container": "#c3ffbb",
+                        "on-tertiary": "#ffffff",
+                        "primary-fixed": "#dee0ff",
+                        "secondary-fixed": "#85f6e5",
+                        "on-background": "#191c1d",
+                        "error": "#ba1a1a",
+                        "background": "#f8f9fa",
+                        "on-secondary-fixed": "#00201c",
+                        "primary-fixed-dim": "#bac3ff",
+                        "primary-container": "#5365c9",
+                        "surface-variant": "#e1e3e4",
+                        "surface-tint": "#4355b9",
+                        "on-primary-container": "#efefff",
+                        "surface-container": "#edeeef",
+                        "tertiary": "#006318",
+                        "on-primary-fixed-variant": "#293ca0",
+                        "tertiary-container": "#107e26",
+                        "on-error-container": "#93000a",
+                        "inverse-on-surface": "#f0f1f2",
+                        "on-secondary-container": "#007166",
+                        "secondary": "#006a60",
+                        "on-primary-fixed": "#00105c",
+                        "secondary-fixed-dim": "#67d9c9",
+                        "on-tertiary-fixed-variant": "#005313",
+                        "on-surface": "#191c1d",
+                        "inverse-primary": "#bac3ff",
+                        "tertiary-fixed": "#94f990",
+                        "on-tertiary-fixed": "#002204",
+                        "inverse-surface": "#2e3132",
+                        "tertiary-fixed-dim": "#78dc77",
+                        "secondary-container": "#85f6e5",
+                        "outline-variant": "#c4c5d9",
+                        "error-container": "#ffdad6",
+                        "on-surface-variant": "#434656",
+                        "surface-container-high": "#e7e8e9",
+                        "primary": "#394baf",
+                        "outline": "#747688",
+                        "surface-container-low": "#f3f4f5",
+                        "surface-bright": "#f8f9fa",
+                        "surface-container-lowest": "#ffffff",
+                        "on-secondary": "#ffffff",
+                        "surface-dim": "#d9dadb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        .bg-primary-gradient {
+            background: linear-gradient(135deg, #394baf 0%, #5365c9 100%);
+        }
+        .bg-success-gradient {
+            background: linear-gradient(135deg, #006a60 0%, #007166 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface antialiased">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto font-['Manrope'] font-medium tracking-tight">
+<div class="text-xl font-extrabold tracking-tighter text-slate-900">Kognitive Galerie</div>
+<div class="hidden md:flex space-x-8">
+<a class="text-[#2E5BFF] border-b-2 border-[#2E5BFF] pb-1" href="#">Lernen</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Dashboard</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors" href="#">Erfolge</a>
+</div>
+<div class="flex items-center space-x-4">
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer">notifications</span>
+<span class="material-symbols-outlined text-on-surface-variant hover:opacity-80 transition-opacity cursor-pointer">settings</span>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant/20">
+<img alt="Nutzerprofil" data-alt="close-up portrait of a professional man with a friendly smile in soft studio lighting against a neutral background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfSX3udqVJBJFvPPUmbm6_G4C3689Uz4u4hkGa_snw6Q3yfw99X19ARdFD-htXx_Aq9sXw8LEI5AIuoD04MCuzSREdZuESryKJClaXpFT9f3OH9OmWonc_TdIPs9x0bqFnuwLV26azqAQTQDN_6JNTiRpdSySxvqJDi4bhPXvSAtO3DCX5EXyqvKmkgxwcZ2Hygdq_z1l82vmxTZ-PQm_qwRvWDFT14ahwEl6aOJpU1_BpWbmxbagDNdRD2DQYbw25furgR_N4b3Q"/>
+</div>
+</div>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="pt-24 pb-32 px-6 max-w-4xl mx-auto min-h-screen flex flex-col">
+<!-- Progress Indicator -->
+<div class="mb-12">
+<div class="flex justify-between items-end mb-4">
+<div>
+<span class="text-xs font-bold tracking-widest text-primary uppercase">Lektion 04</span>
+<h2 class="text-2xl font-headline font-extrabold tracking-tight">Kryillisches Alphabet</h2>
+</div>
+<span class="text-sm font-semibold text-on-surface-variant">8 / 10 Abgeschlossen</span>
+</div>
+<div class="h-1.5 w-full bg-surface-container rounded-full overflow-hidden">
+<div class="h-full bg-success-gradient w-[80%] rounded-full transition-all duration-500"></div>
+</div>
+</div>
+<!-- Quiz Section: Asymmetric Layout -->
+<div class="flex-grow flex flex-col justify-center gap-12">
+<!-- Question Card -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+<div class="text-left space-y-4">
+<h1 class="text-7xl font-headline font-extrabold text-on-surface tracking-tighter">В в</h1>
+<p class="text-xl text-on-surface-variant leading-relaxed">Wie wird dieser kyrillische Buchstabe im Deutschen ausgesprochen?</p>
+</div>
+<div class="relative">
+<!-- Micro-celebration elements (Confetti-like subtle shapes) -->
+<div class="absolute -top-4 -left-4 w-8 h-8 rounded-full bg-tertiary-fixed opacity-40 blur-xl"></div>
+<div class="absolute -bottom-8 -right-4 w-12 h-12 rounded-full bg-secondary-fixed opacity-40 blur-xl"></div>
+<!-- Answer Grid (Bento Style) -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/20 rounded-xl flex items-center justify-center text-2xl font-bold text-on-surface opacity-50 cursor-not-allowed">
+                            Be
+                        </div>
+<!-- ACTIVE SUCCESS STATE -->
+<div class="p-8 bg-success-gradient text-white rounded-xl shadow-xl flex items-center justify-center text-2xl font-bold relative overflow-hidden group">
+<span class="relative z-10">We</span>
+<div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
+<div class="absolute -top-4 -right-4">
+<span class="material-symbols-outlined text-4xl opacity-20" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/20 rounded-xl flex items-center justify-center text-2xl font-bold text-on-surface opacity-50 cursor-not-allowed">
+                            Ve
+                        </div>
+<div class="p-8 bg-surface-container-lowest border border-outline-variant/20 rounded-xl flex items-center justify-center text-2xl font-bold text-on-surface opacity-50 cursor-not-allowed">
+                            Ef
+                        </div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Feedback Bar (Success State) -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-slate-900 border-t-0 shadow-[0_-8px_32px_rgba(0,0,0,0.06)] z-40 transform translate-y-0 transition-transform duration-500">
+<div class="max-w-4xl mx-auto px-8 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+<div class="flex items-center gap-6">
+<div class="w-16 h-16 rounded-full bg-secondary-container flex items-center justify-center text-on-secondary-container">
+<span class="material-symbols-outlined text-4xl" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<h3 class="text-2xl font-headline font-bold text-secondary">Richtig! Gut gemacht!</h3>
+<p class="text-on-surface-variant font-medium">Das russische 'В' entspricht dem deutschen 'W'.</p>
+</div>
+</div>
+<button class="bg-primary-gradient text-white px-12 py-4 rounded-xl font-bold text-lg hover:scale-[1.02] active:scale-95 transition-all shadow-lg flex items-center gap-2">
+                Weiter
+                <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- SideNavBar (Shared Logic - Hidden on Mobile, Fixed left on large screens) -->
+<aside class="hidden lg:flex fixed left-0 top-0 h-full w-20 flex-col items-center py-8 bg-[#f3f4f5] dark:bg-slate-900 z-50">
+<div class="mb-12">
+<span class="material-symbols-outlined text-primary text-3xl">school</span>
+</div>
+<nav class="flex flex-col gap-8">
+<a class="p-3 bg-white text-primary rounded-lg shadow-sm" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</a>
+<a class="p-3 text-slate-400 hover:text-slate-600" href="#">
+<span class="material-symbols-outlined">insights</span>
+</a>
+<a class="p-3 text-slate-400 hover:text-slate-600" href="#">
+<span class="material-symbols-outlined">military_tech</span>
+</a>
+<a class="p-3 text-slate-400 hover:text-slate-600" href="#">
+<span class="material-symbols-outlined">person</span>
+</a>
+</nav>
+<div class="mt-auto flex flex-col gap-6">
+<a class="text-slate-400" href="#">
+<span class="material-symbols-outlined">help_outline</span>
+</a>
+<a class="text-slate-400" href="#">
+<span class="material-symbols-outlined">logout</span>
+</a>
+</div>
+</aside>
+<!-- Footer (Shared Component) -->
+<footer class="w-full py-12 bg-[#f8f9fa] border-t border-slate-200/20">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto font-['Inter'] text-xs uppercase tracking-widest text-slate-400">
+<div class="mb-4 md:mb-0">© 2024 Kognitive Galerie. Die Kunst der Sprache.</div>
+<div class="flex space-x-8">
+<a class="hover:underline underline-offset-4 hover:text-slate-800 transition-opacity" href="#">Datenschutz</a>
+<a class="hover:underline underline-offset-4 hover:text-slate-800 transition-opacity" href="#">Impressum</a>
+<a class="hover:underline underline-offset-4 hover:text-slate-800 transition-opacity" href="#">Support</a>
+</div>
+</div>
+</footer>
+</body></html>

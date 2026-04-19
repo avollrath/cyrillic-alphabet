@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html lang="de"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                "on-secondary-fixed-variant": "#005048",
+                "surface": "#f8f9fa",
+                "on-primary": "#ffffff",
+                "surface-container-highest": "#e1e3e4",
+                "on-error": "#ffffff",
+                "on-tertiary-container": "#c3ffbb",
+                "on-tertiary": "#ffffff",
+                "primary-fixed": "#dee0ff",
+                "secondary-fixed": "#85f6e5",
+                "on-background": "#191c1d",
+                "error": "#ba1a1a",
+                "background": "#f8f9fa",
+                "on-secondary-fixed": "#00201c",
+                "primary-fixed-dim": "#bac3ff",
+                "primary-container": "#5365c9",
+                "surface-variant": "#e1e3e4",
+                "surface-tint": "#4355b9",
+                "on-primary-container": "#efefff",
+                "surface-container": "#edeeef",
+                "tertiary": "#006318",
+                "on-primary-fixed-variant": "#293ca0",
+                "tertiary-container": "#107e26",
+                "on-error-container": "#93000a",
+                "inverse-on-surface": "#f0f1f2",
+                "on-secondary-container": "#007166",
+                "secondary": "#006a60",
+                "on-primary-fixed": "#00105c",
+                "secondary-fixed-dim": "#67d9c9",
+                "on-tertiary-fixed-variant": "#005313",
+                "on-surface": "#191c1d",
+                "inverse-primary": "#bac3ff",
+                "tertiary-fixed": "#94f990",
+                "on-tertiary-fixed": "#002204",
+                "inverse-surface": "#2e3132",
+                "tertiary-fixed-dim": "#78dc77",
+                "secondary-container": "#85f6e5",
+                "outline-variant": "#c4c5d9",
+                "error-container": "#ffdad6",
+                "on-surface-variant": "#434656",
+                "surface-container-high": "#e7e8e9",
+                "primary": "#394baf",
+                "outline": "#747688",
+                "surface-container-low": "#f3f4f5",
+                "surface-bright": "#f8f9fa",
+                "surface-container-lowest": "#ffffff",
+                "on-secondary": "#ffffff",
+                "surface-dim": "#d9dadb"
+            },
+            "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "2xl": "1.5rem",
+                "full": "9999px"
+            },
+            "fontFamily": {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+            }
+          },
+        }
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .active-pill {
+            box-shadow: 0 8px 32px rgba(25, 28, 29, 0.06);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased min-h-screen flex flex-col">
+<!-- TopNavBar Strategy: Execution of JSON style_component_shape and style_bg_color -->
+<header class="fixed top-0 w-full z-50 bg-[#f8f9fa]/80 backdrop-blur-xl">
+<div class="flex justify-between items-center px-8 py-4 max-w-7xl mx-auto">
+<div class="flex items-center gap-4">
+<span class="text-xl font-extrabold tracking-tighter text-slate-900">Kognitive Galerie</span>
+</div>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-[#2E5BFF] border-b-2 border-[#2E5BFF] pb-1 font-['Manrope'] font-medium tracking-tight" href="#">Lernen</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors font-['Manrope'] font-medium tracking-tight" href="#">Dashboard</a>
+<a class="text-slate-500 hover:text-slate-900 transition-colors font-['Manrope'] font-medium tracking-tight" href="#">Erfolge</a>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:opacity-80 transition-opacity">notifications</button>
+<button class="material-symbols-outlined p-2 text-on-surface-variant hover:opacity-80 transition-opacity">settings</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden">
+<img alt="Nutzerprofil" data-alt="close-up portrait of a professional smiling user in a soft studio light with a neutral grey background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCG9pRwZFOuTJcM9WrnjkocogWHHf56XZGGMWKbqvFKKr-dVNf-VXr0KryBbJ5Pv6qXKAnZKbz-ABVBFDDtAXF4ziG5RtbptiE3DKo_edrbqBM6Pni65YPpba9EnB857rfT7Rzy2ix7z75GwQF5H0St2EwkbA6j6vS6SXugOL8D1ls6QQl6hZceJAPED3mt5VDYonNSsiFNqK1pUDgEBq8War5FFIUmxzF9ST4HwxhWrqHnie_RFRoLq-0dNtAp6TxvfWTf1bRdfD4"/>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow pt-24 pb-12 px-6 flex flex-col items-center max-w-3xl mx-auto w-full">
+<!-- Header: Progress & Stats -->
+<div class="w-full mb-12 space-y-6">
+<div class="flex justify-between items-center mb-2">
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+<span class="font-headline font-bold text-sm">Serie: 5</span>
+</div>
+<div class="flex items-center gap-2 bg-surface-container-low px-4 py-2 rounded-full">
+<span class="material-symbols-outlined text-secondary" style="font-variation-settings: 'FILL' 1;">stars</span>
+<span class="font-headline font-bold text-sm">120 XP</span>
+</div>
+</div>
+<div class="relative w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="absolute top-0 left-0 h-full w-[65%] bg-gradient-to-r from-primary to-primary-container rounded-full"></div>
+</div>
+</div>
+<!-- Learning Card Canvas -->
+<div class="w-full mb-12 flex flex-col items-center">
+<div class="bg-surface-container-lowest w-full aspect-[4/3] max-w-md rounded-2xl flex items-center justify-center relative overflow-hidden active-pill border border-outline-variant/10">
+<!-- Abstract visual anchor background -->
+<div class="absolute inset-0 opacity-5 pointer-events-none">
+<img class="w-full h-full object-cover" data-alt="minimalist abstract patterns of flowing indigo ink in water with delicate wisps and high contrast white space" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3tdl-9x3nHWk2te5SxYO7yWO7YXsAAOT9Phd_Wljjx7A54RQV4Z7oSDbXWqXK_PqPKlGEPD9bGW8MytASLrxGFiX2y-gepqq3nfMP_HvKnoNCzs2wP-2vZY1yzvl19GXSR_LzbtaCDzg9_nKcOzslC7G2RaWW9C0FsfBrmFaJ3Q_dRnNuhgvcz5UiWrLZUcgo02ZDu7d1OFNc7Ix3evPOIKdzNR4JLTuG9B6ZHz1He3CYylubgJsj9B1pouTzrCiE-2hPDyw0V-Q"/>
+</div>
+<div class="text-center relative z-10">
+<h1 class="font-headline text-[8rem] font-extrabold text-on-surface leading-none tracking-tighter">В в</h1>
+<p class="mt-4 text-on-surface-variant font-medium tracking-wide uppercase text-xs">Cyrillic Alphabet</p>
+</div>
+</div>
+<div class="mt-10 text-center">
+<h2 class="font-headline text-2xl font-bold text-on-surface mb-2">Wähle die richtige deutsche Aussprache</h2>
+<p class="text-on-surface-variant font-body">Identify the correct phonetic sound for this character.</p>
+</div>
+</div>
+<!-- Options Grid -->
+<div class="grid grid-cols-2 gap-4 w-full max-w-md">
+<button class="group flex flex-col items-center justify-center p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 hover:border-primary/40 hover:bg-primary-fixed/30 transition-all duration-300 active:scale-95">
+<span class="text-2xl font-headline font-bold text-on-surface group-hover:text-primary">Be</span>
+<span class="text-[10px] mt-2 text-outline uppercase tracking-widest font-bold">Option 1</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 hover:border-primary/40 hover:bg-primary-fixed/30 transition-all duration-300 active:scale-95">
+<span class="text-2xl font-headline font-bold text-on-surface group-hover:text-primary">We</span>
+<span class="text-[10px] mt-2 text-outline uppercase tracking-widest font-bold">Option 2</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-8 bg-surface-container-lowest rounded-2xl border-2 border-primary bg-primary/5 shadow-sm active:scale-95">
+<div class="absolute top-3 right-3">
+<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<span class="text-2xl font-headline font-bold text-primary">Ve</span>
+<span class="text-[10px] mt-2 text-primary/60 uppercase tracking-widest font-bold">Selected</span>
+</button>
+<button class="group flex flex-col items-center justify-center p-8 bg-surface-container-lowest rounded-2xl border border-outline-variant/20 hover:border-primary/40 hover:bg-primary-fixed/30 transition-all duration-300 active:scale-95">
+<span class="text-2xl font-headline font-bold text-on-surface group-hover:text-primary">Ef</span>
+<span class="text-[10px] mt-2 text-outline uppercase tracking-widest font-bold">Option 4</span>
+</button>
+</div>
+<!-- Action Footer -->
+<div class="mt-12 w-full max-w-md">
+<button class="w-full py-5 bg-gradient-to-r from-primary to-primary-container text-on-primary font-headline font-bold rounded-2xl shadow-xl shadow-primary/20 hover:opacity-90 transition-all active:scale-[0.98]">
+                PRÜFEN
+            </button>
+</div>
+</main>
+<!-- Footer Component Execution -->
+<footer class="w-full py-12 border-t border-slate-200/20 bg-[#f8f9fa]">
+<div class="flex flex-col md:flex-row justify-between items-center px-12 max-w-7xl mx-auto gap-6">
+<p class="font-['Inter'] text-xs uppercase tracking-widest text-slate-400">© 2024 Kognitive Galerie. Die Kunst der Sprache.</p>
+<div class="flex gap-8">
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-slate-800 hover:underline underline-offset-4 transition-opacity" href="#">Datenschutz</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-slate-800 hover:underline underline-offset-4 transition-opacity" href="#">Impressum</a>
+<a class="font-['Inter'] text-xs uppercase tracking-widest text-slate-500 hover:text-slate-800 hover:underline underline-offset-4 transition-opacity" href="#">Support</a>
+</div>
+</div>
+</footer>
+<!-- Navigation Shell Suppression: FAB not rendered as this is a focused Task Screen -->
+</body></html>
